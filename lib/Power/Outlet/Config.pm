@@ -52,7 +52,7 @@ Command Line
 =head2 new
 
   my $outlet = Power::Outlet->new(type=>"Config", section=>"My Section");
-  my $outlet = Power::OutletConfig->new(section=>"My Section");
+  my $outlet = Power::Outlet::Config->new(section=>"My Section");
 
 =cut
 
