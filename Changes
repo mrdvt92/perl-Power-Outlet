@@ -1,0 +1,178 @@
+Revision history for Perl module Power::Outlet
+
+TODO
+  - RE-write Net::UPnP interfaces as Net:UPnP is not good at error trapping or timeouts.
+  - Update error handling for Power::Outlet::Hue->name
+
+0.42 2021-02-20
+  - Updated scripts/power-outlet.cgi - Added action property to support Tasmota Power0 toggle behavior
+  - Updated lib/Power/Outlet/Common.pm - Added action method
+
+0.41 2021-02-16
+  - Updated lib/Power/Outlet/Tasmota.pm - Removed debug print statements
+
+0.40 2021-02-16
+  - Updated lib/Power/Outlet/Tasmota.pm - Added support for Power0 capability
+
+0.39 2021-01-01
+  - Updated lib/Power/Outlet/Shelly.pm
+    - Added style method to add support for Shelly Lights and Dimmers.
+    - Dropped unnecessary http_path override
+    - Updated _call api
+    - Fixed version and documentation
+
+0.38 2021-01-01
+  - Added t/003_Shelly_live.psgi - Shelly REST API simulator
+  - Updated t/003_Shelly_live.t - Note: I do not own a Shelly please report any issues.
+  - Fixed lib/Power/Outlet/Shelly.pm
+    - Fixed _index_default
+    - Fixed call to url to clear cache for diff http_path on different calls
+  - Updated lib/Power/Outlet/Shelly.pm - _call api to return hash
+
+0.37 2020-12-31
+  - Added lib/Power/Outlet/Shelly.pm
+  - Added t/003_Shelly_live.t
+
+0.36 2020-12-23
+  - Updated lib/Power/Outlet/Virtual.pm - added support for Windows CPAN testers
+  - Updated t/003_Virtual_live.t - added support for CPAN testers without a writable temp folder
+  - Updated lib/Power/Outlet/Common/IP/SNMP.pm - added support for perl 5.8
+  - Updated scripts/power-outlet-json.cgi - updated Node-Red documentation
+
+0.35 2020-12-21
+  - Updated scripts/power-outlet-json.cgi.pod
+
+0.34 2020-12-21
+  - Updated scripts/power-outlet-json.cgi to support better integration with Node-Red
+    - Updated to use Power::Outlet::Config
+    - Fixed INI path (0.28 change)
+    - Updated error management for better Node-Red integration
+    - Updated action to be case insensitive
+    - Added HTTP status return codes
+
+0.33 2020-11-25
+  - Updated lib/Power/Outlet/Config.pm - Updated to support final api
+
+0.32 2020-11-25
+  - Updated scripts/power-outlet.cgi - Added forking model for each outlet for performance
+
+0.31 2020-11023
+  - Updated scripts/power-outlet.cgi - Added separate timeout icon
+
+0.30 2020-11-23
+  - Updated scripts/power-outlet.cgi - Added timeout and error capability
+
+0.29 2020-10-13
+  - Updated lib/Power/Outlet/Config.pm - Updated error messages
+
+0.28 2020-10-12
+  - Added lib/Power/Outlet/Config.pm - to support /etc/power-outlet.cgi
+  - Updated perl-Power-Outlet.spec and scripts/power-outlet.cgi
+    - Moved power-outlet.ini from /usr/share to /etc - BACKWARDS INCOMPATABLE CHANGE
+
+0.27 2020-04-22
+  - Added Power/Outlet/SonoffDiy.pm - To support Sonoff firmware in DIY mode on hardware like the Sonoff Mini
+
+0.26 2020-04-18
+  - Updated Power/Outlet/Tasmota.pm - For devices with just one relay the JSON key is POWER not POWER1 (see SetOption26)
+
+0.25 2020-04-12
+  - Added pod files since meta::cpan does not support indexing pod from .cgi files
+    - scripts/power-outlet-json.cgi.pod
+    - scripts/power-outlet.cgi.pod
+  - Updated scripts/power-outlet-mqtt-listener.pl - Added YAML configuration documentation
+
+0.24 2020-04-09
+  - Updated lib/Power/Outlet/Common/IP/HTTP/JSON.pm - Updated error pass through from HTTP::Tiny
+  - Updated scripts/power-outlet.cgi - Added support for groups in configuration INI file
+  - Updated scripts/conf/power-outlet.ini - Added my current configuration with new Tasmota devices
+  - Updated perl-Power-Outlet.spec - Updated requires
+
+0.23 2020-03-29
+  - Added scripts/power-outlet-mqtt-listener.pl
+  - Added scripts/conf/power-outlet-mqtt-listener.yml
+  - Added scripts/conf/power-outlet-mqtt-listener.service
+  - Updated perl-Power-Outlet.spec - to support power-outlet-mqtt-listener.pl
+
+0.22 2020-03-28
+  - Updated Power::Outlet::Tasmota - Documentation
+
+0.21 2020-03-27
+  - Added Power::Outlet::Tasmota
+  - Added t/003_Tasmota_live.t
+
+0.20 2018-12-16
+  - Added Power::Outlet::iBootBarGroup
+
+0.19 2018-10-05
+  - Fixed two type-Os in Home Assistant YAML
+
+0.18 2018-01-03
+  - Added lib/Power/Outlet/Virtual.pm
+
+0.17 2018-01-01
+  - Updated lib/Power/Outlet/Hue.pm
+    - Dropped disused List::Util package
+    - Added resource property
+    - Added _path method
+    - Tested against HueEmulator-v0.7.jar
+
+0.16 2015-11-07
+  - Updated MANIFEST - rt108167 <chorny at cpan.org>
+
+0.15 2015-01-07
+  - Cleaned up Philips Hue code and documentation
+
+0.14 2015-01-07
+  - Added support for Philips Hue devices
+
+0.13 2014-12-21
+  - Added script power-outlet-json.cgi
+
+0.12 2013-12-31
+  - Updated Power::Outlet::WeMo->name default value to pull the FriendlyName from UPnP
+  - Updated Power::Outlet::iBootBar->name default value to pull the outletName from SNMP
+  - Updated documentation
+
+0.11 2013-12-29
+  - Fixed WeMo returns to be "ON"|"OFF" vs 0|1.
+
+0.10 2013-12-29
+  - Fixed Power::Outlet::Common->cycle (type-O calling switch method)
+  - Added WeMo capability
+
+0.09 2013-12-27
+  - Fixed Makefile.PL for CPAN testers (Net::SNMP)
+
+0.08 2013-12-27
+  - Fixed Makefile.PL for CPAN testers (Package::New)
+  - Fixed power-outlet.cgi pod documentation
+
+0.07 2013-12-18
+  - Updated Documentation for CPAN
+
+0.06 2013-11-30
+  - Added license file for DCRoundSwitch icons.
+
+0.05 2013-11-30
+  - Updated Power::Outlet::iBootBar to not query device in void context
+
+0.04 2013-11-30
+  - Updated power-outlet.cgi to pull outlets from ini file
+  - Updated power-outlet.cgi to work nicely on iPhone
+  - Updated spec to build RPM perl-Power-Outlet-application-cgi
+
+0.03 2013-11-29
+  - Updated power-outlet.cgi
+  - Added name property
+
+0.02 2013-11-26
+  - Updated Power::Outlet->new to call subclass->new
+  - Added program power-outlet
+  - Added CGI example power-outlet.cgi
+  - Added tests
+  - Added RPM Spec
+
+0.01 2013-11-23
+  - original version; created by ExtUtils::ModuleMaker 0.51
+  - Power::Outlet::iBoot was originally Net:iBoot (now abandoned) as iBoot uses a custom TCP/IP protocol
