@@ -8,8 +8,9 @@ WriteMakefile(
     AUTHOR       => 'Michael R. Davis (mrdvt92@yahoo.com)',
     ABSTRACT     => 'Control and query network attached power switches',
     BUILD_REQUIRES => {
-                       'ExtUtils::MakeMaker' => 6.46,
-                       'Test::Simple'        => 0.44,
+                       'ExtUtils::MakeMaker::META_MERGE::GitHub' => 0,
+                       'ExtUtils::MakeMaker'                     => 6.46,
+                       'Test::Simple'                            => 0.44,
                       },
     PREREQ_PM    => {
                      'Package::New'             => 0,
