@@ -7,8 +7,11 @@ WriteMakefile(
     VERSION_FROM => 'lib/Power/Outlet.pm',
     AUTHOR       => 'Michael R. Davis (mrdvt92@yahoo.com)',
     ABSTRACT     => 'Control and query network attached power switches',
+    BUILD_REQUIRES => {
+                       'ExtUtils::MakeMaker' => 6.46,
+                       'Test::Simple'        => 0.44,
+                      },
     PREREQ_PM    => {
-                     'Test::Simple'             => 0.44,
                      'Package::New'             => 0,
                      'Time::HiRes'              => 0,
                      'Parallel::ForkManager'    => 1.01, #for CGI app

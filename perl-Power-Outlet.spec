@@ -11,6 +11,7 @@ Source0:        http://www.cpan.org/modules/by-module/Power/Power-Outlet-%{versi
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  perl(ExtUtils::MakeMaker)
+BuildRequires:  perl(ExtUtils::MakeMaker::META_MERGE::GitHub)
 BuildRequires:  perl(Test::Simple) >= 0.44
 BuildRequires:  perl(Package::New)
 BuildRequires:  perl(Package::Role::ini) >= 0.07
