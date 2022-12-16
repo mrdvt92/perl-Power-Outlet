@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw{Power::Outlet::Common::IP::HTTP};
 
-our $VERSION = '0.46';
+our $VERSION = '0.47';
 our $PACKAGE = __PACKAGE__;
 
 =head1 NAME
