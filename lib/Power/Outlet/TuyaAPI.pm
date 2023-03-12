@@ -4,7 +4,7 @@ use warnings;
 use base qw{Power::Outlet::Common::IP};
 use WebService::Tuya::IoT::API 0.02; #device_information
 
-our $VERSION = '0.46';
+our $VERSION = '0.48';
 
 =head1 NAME
 
@@ -21,7 +21,7 @@ Power::Outlet::TuyaAPI - Control and query an outlet via the TuyaAPI.
 
 Power::Outlet::TuyaAPI is a package for controlling and querying an outlet via the TuyaAPI.
 
-This package is a wrapper around L<WebService::Tuya::IoT::API> please see that documentation for device congfiguration.
+This package is a wrapper around L<WebService::Tuya::IoT::API> please see that documentation for device configuration.
 
 =head1 USAGE
 
@@ -97,7 +97,7 @@ sub _deviceid_default {undef};
 
 =head2 relay
 
-The relay name or "code" for a particular relay on the device.  Devices with a single relay this value will most likely be switch_1 but, for devices with multiple relays the first relay is normally switch_1 and subsiquent relays should be labeled switch_2, etc.
+The relay name or "code" for a particular relay on the device.  Devices with a single relay this value will most likely be switch_1 but, for devices with multiple relays the first relay is normally switch_1 and subsequent relays should be labeled switch_2, etc.
 
 default: switch_1
 
@@ -183,7 +183,8 @@ Sends messages to the device to cycle the device relay state
 
 =cut
 
-#see Power::Outlet::Common->cycle - TODO: The API supports status with values like countdown but I have not yet figure out how to set the countdown.
+#see Power::Outlet::Common->cycle
+# Note: switch in 10 seconds: $self->_WebService_Tuya_IoT_API->device_commands($self->deviceid, {code=>'countdown_1', value=>$self->cycle_duration}); 
 
 sub _WebService_Tuya_IoT_API {
   my $self = shift;

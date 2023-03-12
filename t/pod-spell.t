@@ -72,3 +72,7 @@ V3
 api
 https
 pwd
+TuyaAPI
+deviceid
+openapi
+tuyaus
