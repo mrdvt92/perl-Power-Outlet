@@ -9,5 +9,6 @@ if [ -n "$VERSION1" -a -n "$VERSION2" ]; then
 else
 
   echo "Syntax: $0 version1 version2"
+  find lib/ -name "*.pm" -exec grep "our.*VERSION" {} \;
 
 fi
