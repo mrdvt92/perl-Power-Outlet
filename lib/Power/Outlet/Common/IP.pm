@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw{Power::Outlet::Common};
 
-our $VERSION = '0.48';
+our $VERSION = '0.49';
 
 =head1 NAME
 
