@@ -18,7 +18,7 @@ Tasmota defaults
 
   my $outlet = Power::Outlet::MQTT->new(
                                         host                => "mqtt",
-                                        name                => "my_device",
+                                        device              => "my_device",
                                         relay               => "POWER1",
                                        );
 
@@ -59,7 +59,7 @@ Examples:
 =head1 USAGE
 
   use Power::Outlet::MQTT;
-  my $outlet = Power::Outlet::MQTT->new(host=>"mqtt", name=>"my_device");
+  my $outlet = Power::Outlet::MQTT->new(host=>"mqtt", device=>"my_device");
   print $outlet->on, "\n";
 
 =head1 CONSTRUCTOR
