@@ -7,6 +7,7 @@ WriteMakefile(
     BUILD_REQUIRES => {
                        'ExtUtils::MakeMaker'                     => 6.46,
                        'Test::Simple'                            => 0.44,
+                       'Test::Warn'                              => 0,
                       },
     PREREQ_PM    => {
                      'Package::New'                       => 0,
@@ -24,7 +25,7 @@ WriteMakefile(
                      'Package::Role::ini'                 => 0.07, #for Config
                      'WebService::Tuya::IoT::API'         => 0.02, #for TuyaAPI
                      'Net::MQTT::Simple'                  => 1.24, #for MQTT
-                     'Net::MQTT::Simple::One_Shot_Loader' => 0,    #for Net::MQTT::Simple->one_shot
+                     'Net::MQTT::Simple::One_Shot_Loader' => 0.02, #for Net::MQTT::Simple->one_shot
                     },
     META_MERGE   => {
                       'resources' => {
