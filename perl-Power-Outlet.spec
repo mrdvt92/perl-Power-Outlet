@@ -2,7 +2,7 @@
 
 Name:           perl-Power-Outlet
 Version:        0.50
-Release:        6%{?dist}
+Release:        9%{?dist}
 Summary:        Control and query network attached power outlets
 License:        GPL+ or Artistic
 Group:          Development/Libraries
