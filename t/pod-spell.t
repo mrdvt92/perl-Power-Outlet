@@ -76,3 +76,4 @@ TuyaAPI
 deviceid
 openapi
 tuyaus
+Kauf
