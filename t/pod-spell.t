@@ -77,3 +77,13 @@ deviceid
 openapi
 tuyaus
 Kauf
+Beken
+Bouffalo
+ESWIN
+Espressif
+OpenBeken
+Realtek
+Transa
+WinnerMicro
+chipsets
+openbeken
