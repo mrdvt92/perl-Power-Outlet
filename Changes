@@ -4,6 +4,10 @@ TODO
   - RE-write Net::UPnP interfaces as Net:UPnP is not good at error trapping or timeouts.
   - Update error handling for Power::Outlet::Hue->name
 
+0.53 2026-02-16
+  - Added Power::Outlet::HomeAssistantAPI and tests
+  - Updated Power::Outlet::Common::IP::HTTP::JSON to add header capability
+
 0.52 2025-10-28
   - Added Power::Outlet::OpenBeken
 

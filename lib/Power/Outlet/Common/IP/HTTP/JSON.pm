@@ -5,7 +5,7 @@ use base qw{Power::Outlet::Common::IP::HTTP};
 #use Data::Dumper qw{Dumper};
 use JSON qw{encode_json decode_json};
 
-our $VERSION = '0.50';
+our $VERSION = '0.53';
 
 =head1 NAME
 
@@ -31,11 +31,11 @@ Power::Outlet::Common::IP::HTTP::JSON is a package for controlling and querying 
 
 JSON HTTP request response call
 
-  my $response_data_structure=$outlet->json_request($method, $url, $request_data_structure);
+  my $response_data_structure=$outlet->json_request($method, $url, $request_data_structure, \%options);
 
 Example:
 
-  my $response_data_structure=$outlet->json_request(PUT=>"http://localhost/service", {foo=>"bar"});
+  my $response_data_structure=$outlet->json_request(PUT=>"http://localhost/service", {foo=>"bar"}, {headers=>{'Content-Type' => 'application/json'}});
 
 =cut
 
@@ -44,11 +44,12 @@ sub json_request {
   my $method   = shift or die;
   my $url      = shift or die;
   my $input    = shift;
-  my %options  = ();
-  $options{"content"} = encode_json($input) if defined $input;
+  my $options  = shift // {};
+  die("Error: options must be a hash reference") unless ref($options) eq 'HASH';
+  $options->{"content"} = encode_json($input) if defined $input;
   #print "$method $url\n";
   #print Dumper(\%options);
-  my $response = $self->http_client->request($method, $url, \%options);  
+  my $response = $self->http_client->request($method, $url, $options);  
   if ($response->{"status"} eq "599") {
     die(sprintf(qq{HTTP Error: "%s %s", URL: "$url", Content: %s}, $response->{"status"}, $response->{"reason"}, $response->{"content"}));
   } elsif ($response->{"status"} ne "200") {

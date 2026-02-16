@@ -5,7 +5,7 @@ use base qw{Power::Outlet::Tasmota};
 
 #See Power::Outlet::Tasmota for code but use OpenBeken in case we need to tweak any operations for OpenBeken in the future.
 
-our $VERSION = '0.52';
+our $VERSION = '0.53';
 
 =head1 NAME
 

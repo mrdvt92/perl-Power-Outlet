@@ -6,7 +6,7 @@ use Net::MQTT::Simple::SSL qw{};
 use Net::MQTT::Simple::One_Shot_Loader;
 use base qw{Power::Outlet::Common::IP};
 
-our $VERSION = '0.50';
+our $VERSION = '0.53';
 
 =head1 NAME
 
