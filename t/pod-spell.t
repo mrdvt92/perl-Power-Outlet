@@ -87,3 +87,4 @@ Transa
 WinnerMicro
 chipsets
 openbeken
+HomeAssistantAPI

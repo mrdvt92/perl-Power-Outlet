@@ -25,6 +25,7 @@ WriteMakefile(
                      'Package::Role::ini'                 => 0.07, #for Config
                      'WebService::Tuya::IoT::API'         => 0.02, #for TuyaAPI
                      'Net::MQTT::Simple'                  => 1.24, #for MQTT
+                     'IO::Socket::SSL'                    => 0,    #for MQTT
                      'Net::MQTT::Simple::One_Shot_Loader' => 0.02, #for Net::MQTT::Simple->one_shot
                     },
     META_MERGE   => {

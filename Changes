@@ -4,6 +4,10 @@ TODO
   - RE-write Net::UPnP interfaces as Net:UPnP is not good at error trapping or timeouts.
   - Update error handling for Power::Outlet::Hue->name
 
+0.54 2026-02-21
+  - Add dependancy on IO::Socket::SSL for MQTT driver - fixes #2
+  - Fixed spelling
+
 0.53 2026-02-16
   - Added Power::Outlet::HomeAssistantAPI and tests
   - Updated Power::Outlet::Common::IP::HTTP::JSON to add header capability

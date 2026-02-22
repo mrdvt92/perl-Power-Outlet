@@ -4,7 +4,7 @@ use warnings;
 use base qw{Power::Outlet::Common::IP::HTTP::JSON};
 use JSON qw{decode_json};
 
-our $VERSION = '0.53';
+our $VERSION = '0.54';
 
 =head1 NAME
 

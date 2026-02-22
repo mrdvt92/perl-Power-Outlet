@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base qw{Power::Outlet::Common::IP::HTTP::JSON};
 
-our $VERSION = '0.53';
+our $VERSION = '0.54';
 
 =head1 NAME
 
@@ -71,7 +71,7 @@ sub token {
 
 =head2 entity_id
 
-Home Assistant entity_id is required and is noramlly formatted string such as switch.short_name.
+Home Assistant entity_id is required and is normally formatted string such as switch.short_name.
 
 =cut
 

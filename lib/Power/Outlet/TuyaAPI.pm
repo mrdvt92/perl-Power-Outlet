@@ -4,7 +4,7 @@ use warnings;
 use base qw{Power::Outlet::Common::IP};
 use WebService::Tuya::IoT::API 0.02; #device_information
 
-our $VERSION = '0.53';
+our $VERSION = '0.54';
 
 =head1 NAME
 
